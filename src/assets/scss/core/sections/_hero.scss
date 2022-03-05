@@ -1,10 +1,25 @@
 .hero {
+	.hero-h {
+		animation: glitch 1s linear infinite;
+	}
 
 	.section-inner {
 		padding-top: $hero--padding-t__mobile;
 		padding-bottom: $hero--padding-b__mobile;
 	}
 }
+
+@keyframes glitch{
+	2%,64%{
+	  transform: translate(2px,0) skew(0deg);
+	}
+	4%,60%{
+	  transform: translate(-2px,0) skew(0deg);
+	}
+	62%{
+	  transform: translate(0,0) skew(5deg); 
+	}
+  }
 
 .hero-inner {
 

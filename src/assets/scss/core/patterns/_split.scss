@@ -1,3 +1,14 @@
+@keyframes split-slide-left {
+	0%   {left: 0px;}
+	50% {left: -50px}
+	100% {left: 0px}
+  }
+@keyframes split-slide-right {
+	0%   {left: 0px;}
+	50% {left: 50px}
+	100% {left: 0px}
+}
+
 .split-wrap {
 	margin-top: -($split-item--padding-v__mobile / 2);
 
@@ -8,6 +19,29 @@
     &:not(:last-of-type) {
         margin-bottom: $split-item--padding-v__mobile / 2;
     }
+
+	.split-left {
+		animation-name: split-slide-left;
+		position: relative;
+  		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		// animation-play-state: paused;
+	}
+	// .split-left:hover{
+	// 	animation-name: split-slide-left;
+	// 	animation-play-state: running;              /* trigger on hover */
+	//   }
+	.split-right {
+		animation-name: split-slide-right;
+		position: relative;
+  		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		// animation-play-state: paused;
+	}
+	// .split-right:hover{
+	// 	animation-name: split-slide-right;
+	// 	animation-play-state: running;              /* trigger on hover */
+	//   }
 
 	.split-item {
 		padding-top: $split-item--padding-v__mobile / 2;

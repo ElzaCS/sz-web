@@ -22,21 +22,27 @@ const App = () => {
 
   const childRef = useRef();
   let location = useLocation();
+  let t = 1;
+  console.log("t=",t)
 
   useEffect(() => {
     const page = location.pathname;
     document.body.classList.add('is-loaded')
+    setTimeout(() => {t = 1; console.log("t=",t)}, 3000);
+    t = 0;
+    console.log("t=",t)
+
     childRef.current.init();
     trackPage(page);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
-  return (
+  return ( 
     <ScrollReveal
       ref={childRef}
       children={() => (
         <Switch>
-          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+            <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
         </Switch>
       )} />
   );

@@ -71,61 +71,47 @@ const Header = ({
   const classes = classNames(
     'site-header',
     bottomOuterDivider && 'has-bottom-divider',
-    className
+    className,
+    // 'sticky'
   );
 
   return (
-    <header
-      {...props}
-      className={classes}
-    >
+    <header      {...props}      className={classes}    >
+      {/* <div className="container sticky"> */}
       <div className="container">
-        <div className={
-          classNames(
-            'site-header-inner',
-            bottomDivider && 'has-bottom-divider'
-          )}>
+        <div className={ classNames( 'site-header-inner', bottomDivider && 'has-bottom-divider' )}>
           <Logo />
+          <h2 className="brand-name">StreamZ</h2>
           {!hideNav &&
             <>
-              <button
-                ref={hamburger}
-                className="header-nav-toggle"
-                onClick={isActive ? closeMenu : openMenu}
-              >
+              <button ref={hamburger}  className="header-nav-toggle"  onClick={isActive ? closeMenu : openMenu}   >
                 <span className="screen-reader">Menu</span>
                 <span className="hamburger">
                   <span className="hamburger-inner"></span>
                 </span>
               </button>
-              <nav
-                ref={nav}
-                className={
-                  classNames(
-                    'header-nav',
-                    isActive && 'is-active'
-                  )}>
+              <nav ref={nav} className={ classNames( 'header-nav',  isActive && 'is-active'  )}>
                 <div className="header-nav-inner">
-                  <ul className={
-                    classNames(
-                      'list-reset text-xs',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                      <Link to="#0" onClick={closeMenu}>Documentation</Link>
-                    </li>
+                  <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                    <li> <Link to="#0" onClick={closeMenu}>Brands</Link> </li>
+                  </ul>
+                  <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                    <li> <Link to="#0" onClick={closeMenu}>Creators</Link> </li>
+                  </ul>
+                  <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                    <li> <Link to="#0" onClick={closeMenu}>Twitter</Link> </li>
+                  </ul>
+                  <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                    <li> <Link to="#0" onClick={closeMenu}>Instagram</Link> </li>
                   </ul>
                   {!hideSignin &&
-                    <ul
-                      className="list-reset header-nav-right"
-                    >
-                      <li>
-                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
-                      </li>
+                    <ul className="list-reset header-nav-right" >
+                      <li><Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Schedule a Meet</Link> </li>
                     </ul>}
                 </div>
               </nav>
-            </>}
+            </>
+          }
         </div>
       </div>
     </header>

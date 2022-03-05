@@ -2,6 +2,7 @@
 	position: absolute !important;
 	top: 0;
 	width: 100%;
+	height: 100%;
 	z-index: 10 !important;
 	background: color-bg(header);
 
@@ -15,6 +16,16 @@
 	.brand {
 		margin-right: $header-nav--padding-h;
 	}	
+	.logo {
+		position: relative;
+		top: 7px;
+		// top: 50%;
+	}
+}
+@include media( '<medium' ){
+	.brand-name{
+		visibility: hidden;
+	}
 }
 
 .site-header-inner {
@@ -22,6 +33,9 @@
     justify-content: space-between;
     align-items: center;
 	height: $header-height__mobile;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
 }
 
 .header-nav {
@@ -85,7 +99,7 @@
 	display: none;
 }
 
-@include media( '<=medium' ) {
+@include media( '<=large' ) {
 
 	.header-nav-toggle {
 		display: block;
@@ -142,6 +156,7 @@
 
 			.section:first-of-type {
 				padding-top: $header-height__desktop;
+				height: 100%;
 			}
 		}
 	}

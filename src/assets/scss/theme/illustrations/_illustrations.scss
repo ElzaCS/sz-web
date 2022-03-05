@@ -23,3 +23,17 @@
 .illustration-section-02::after {
 	@include illustration('illustration-section-02.svg', 100%, 253px, null, null, 30px);
 }
+// .illustration-section-h {
+// 	@include illustration('illustration-section-02.svg', 100%, 253px, null, null, 30px);
+// }
+.illustration-section-h::after {
+	// background-image: "../../../images/4483805.jpg";
+	background-image: url("../../../images/4483805.jpg");
+	// @include illustration('../../../images/4483805.jpg', 100%, 253px, null, null, 30px);
+	// height: 500px;
+	margin:0;
+	background-position: center;
+	background-repeat: no-repeat;
+  	background-size: cover;
+	//   @include illustration('illustration-section-02.svg', 100%, 253px, null, null, 30px);
+}
