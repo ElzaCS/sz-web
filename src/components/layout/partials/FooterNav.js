@@ -31,18 +31,16 @@ const FooterNav = ({
       <table>
         <tbody>
           <tr>
-            <th><center>Product</center></th>
-            <th><center>Company</center></th>
+            <th colSpan='2'><center>About Us</center></th>
+            <th colSpan='2'><center>Connect with us</center></th>
           </tr>
           <tr>
-            <td>Overview</td>
-            <td>About Cardy</td>
+            <td>Brands</td>
+            <td>Creators</td>
+            <td>Twitter</td>
+            <td>Instagram</td>
           </tr>
-          <tr>
-            <td>Business Account</td>
-            <td>Contact</td>
-          </tr>
-          <tr>
+          {/* <tr>
             <td>Credit card</td>
             <td>Careers</td>
           </tr>
@@ -61,7 +59,7 @@ const FooterNav = ({
           <tr>
             <td>Integrations</td>
             <td></td>
-          </tr>
+          </tr> */}
         </tbody>
       </table>
     </nav>

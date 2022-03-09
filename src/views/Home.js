@@ -26,8 +26,8 @@ const Home = () => {
       <Hero className="illustration-section-01" />
       <FeaturesSplit invertMobile topDivider imageFill className="illustration-section-02" />
       {/* <HorizontalStepper /> */}
-      <Testimonial topDivider />
-      <FeaturesTiles />
+      {/* <Testimonial topDivider /> */}
+      {/* <FeaturesTiles /> */}
       {/* <Founders invertMobile topDivider imageFill className="illustration-section-06" /> */}
     </>
   );

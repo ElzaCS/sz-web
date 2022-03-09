@@ -93,13 +93,13 @@ const Header = ({
               <nav ref={nav} className={ classNames( 'header-nav',  isActive && 'is-active'  )}>
                 <div className="header-nav-inner">
                   <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
-                    <li> <Link to="#0" onClick={closeMenu}>Brands</Link> </li>
+                    <li> <a href="#for-brands" onClick={closeMenu}>Brands</a> </li>
                   </ul>
                   <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
-                    <li> <Link to="#0" onClick={closeMenu}>Creators</Link> </li>
+                    <li> <a href="#for-influencers" onClick={closeMenu}>Creators</a> </li>
                   </ul>
                   <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
-                    <li> <Link to="#0" onClick={closeMenu}>Twitter</Link> </li>
+                    <li> <a href="https://twitter.com/IncStreamz" onClick={closeMenu}>Twitter</a> </li>
                   </ul>
                   <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
                     <li> <Link to="#0" onClick={closeMenu}>Instagram</Link> </li>

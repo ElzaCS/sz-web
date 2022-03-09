@@ -20,28 +20,21 @@
         margin-bottom: $split-item--padding-v__mobile / 2;
     }
 
-	.split-left {
-		animation-name: split-slide-left;
-		position: relative;
-  		animation-duration: 5s;
-		animation-iteration-count: infinite;
-		// animation-play-state: paused;
-	}
-	// .split-left:hover{
+	// .split-left {
 	// 	animation-name: split-slide-left;
-	// 	animation-play-state: running;              /* trigger on hover */
-	//   }
-	.split-right {
-		animation-name: split-slide-right;
-		position: relative;
-  		animation-duration: 5s;
-		animation-iteration-count: infinite;
-		// animation-play-state: paused;
-	}
-	// .split-right:hover{
+	// 	position: relative;
+  	// 	animation-duration: 5s;
+	// 	animation-iteration-count: infinite;
+	// 	// animation-play-state: paused;
+	// }
+	
+	// .split-right {
 	// 	animation-name: split-slide-right;
-	// 	animation-play-state: running;              /* trigger on hover */
-	//   }
+	// 	position: relative;
+  	// 	animation-duration: 5s;
+	// 	animation-iteration-count: infinite;
+	// 	// animation-play-state: paused;
+	// }
 
 	.split-item {
 		padding-top: $split-item--padding-v__mobile / 2;
@@ -114,6 +107,22 @@
 	    &:not(:last-of-type) {
 	        margin-bottom: $split-item--padding-v__desktop / 2;
 	    }
+
+		.split-left {
+			animation-name: split-slide-left;
+			position: relative;
+			  animation-duration: 5s;
+			animation-iteration-count: infinite;
+			// animation-play-state: paused;
+		}
+		
+		.split-right {
+			animation-name: split-slide-right;
+			position: relative;
+			  animation-duration: 5s;
+			animation-iteration-count: infinite;
+			// animation-play-state: paused;
+		}
 
 		.split-item {
 			padding-top: $split-item--padding-v__desktop / 2;
