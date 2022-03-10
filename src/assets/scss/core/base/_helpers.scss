@@ -170,18 +170,22 @@
 	box-shadow: color-bg(shadow);
 }
 .bg-opacity {
+	// background: url('../../../images/bg2.png'); background-size:auto; width:0px; height: 0px;
+	// content-url: url("/home/anu/dev/open-react-template/src/assets/images/bg2.png");
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1%;
     opacity: 0.5;
+	min-width: 1500px;
 	// height: 100%;
 }
 
 @include media( '<=medium' ) {
 	.bg-opacity {
+		content-url: url("/home/anu/dev/open-react-template/src/assets/images/film.png");
 		margin-left: 0;
 		height: 600px;
-		width: 100%;
+		// width: 100%;
 		margin-top: 10%;
 		// margin-bottom: auto;
 	}
@@ -193,14 +197,18 @@
   }
 
 .home-heading {
-	right: 0;
-	width: 50%;
+	// position: absolute;
+	text-align: center;
+	width: 100%;
 	font-size: 3.5em;
 	line-height: 1.0;
 	// height: fit-content;
 	position: absolute;
+	right: 0;
 	top: 0;
-	padding: 15% 0;
+	padding: 20% 0;
+	// margin: auto;
+	margin-left: 50%;
 	font-family: Space Mono;
 	font-variant: small-caps;
 	animation: glow 0.5s ease-in-out infinite alternate;
@@ -213,6 +221,52 @@
 		padding: 25% 1%;
 	}
 }
+
+  
+  .inner {
+	position: absolute;
+	right: 33%;
+	left: 33%;
+	top: 5%;
+	background-color:transparent;
+	width:500px;
+	height:500px;
+	border-radius:250px;
+	box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
+	-webkit-animation: bg-circle-pulse 2s linear 1s infinite;
+  }
+
+  @-webkit-keyframes bg-circle-pulse {
+	0% { 
+	  box-shadow:0 0 8px #ea4c89, inset 0 0 8px #ea4c89; 
+	  width:100px;
+	  height:100px;
+	  border-radius:50px;
+	}
+	50% { 
+	  box-shadow:0 0 16px #ea4c89, inset 0 0 14px #ea4c89; 
+	 }
+	75% {
+	  width:200px;
+	  height:200px;
+	  border-radius:100px;
+	}
+	100% { 
+	  box-shadow:0 0 8px #ea4c89, inset 0 0 8px #ea4c89; 
+	}
+  }
+@include media( '<=medium' ) {
+	.inner {
+		right: 0;
+		left: 0;
+		margin: auto;
+		width: 300px;
+		height: 300px;
+		border-radius: 150px;
+	}
+  
+}
+
 
 img.has-shadow {
 	border-radius: $img-radius;

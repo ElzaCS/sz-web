@@ -14,15 +14,20 @@ const Home = () => {
   return (
     <>
       {/* <Cta split /> */}
-      <Image
+      <div className="inner"></div>
+      <img className="bg-opacity" src={require('../assets/images/bg2.png')} style={{width: '1500px'}} />
+      {/* <Image
                   className="bg-opacity"
-                  src={require('../assets/images/concert.jpg')}
+                  src={require('../assets/images/bg2.png')}
                   alt="Hero"
                   // width="900"
-                  width="1400"
+                  width="1500"
                   // height="100%"
-          />
+          /> */}
+          {/* <div className="inner"> */}
           <h1 className="home-heading mb-16 reveal-from-bottom">Unleash the power of <br /> <span className="text-color-primary-gradient">Physital Shopping</span></h1>
+          {/* </div> */}
+      
       <Hero className="illustration-section-01" />
       <FeaturesSplit invertMobile topDivider imageFill className="illustration-section-02" />
       {/* <HorizontalStepper /> */}
