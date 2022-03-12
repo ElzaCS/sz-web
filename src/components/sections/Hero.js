@@ -5,6 +5,7 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
+import Typewriter from "typewriter-effect";
 
 const propTypes = {
   ...SectionProps.types
@@ -60,8 +61,32 @@ const Hero = ({
       <div className="container-sm">
         <div className={innerClasses}>
           <div className="hero-content">
-            <h4 className="hero-h mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-            <span className="text-color-primary-gradient">StreamZ</span> is a new kind of social network where influencers share their lifestyle with live stream shopping and engage with the audience, collect and trade NFTs and collaborate with advertisers in the Metaverse
+            <h4 className="hero-h mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200" style={{display: "block"}}>
+            <span className="text-color-primary-gradient">StreamZ</span> empowers influencers
+            <Typewriter  
+                loop="true"
+                options={{
+                  loop: true
+                }}
+                onInit={(typewriter)=> {
+                typewriter
+                .changeDelay(60)
+                .changeDeleteSpeed(1)
+                .typeString("to introduce their stores live")
+                .pauseFor(1000)
+                .deleteAll()
+                .typeString("to engage with the audience")
+                .pauseFor(1000)
+                .deleteAll()
+                .typeString("to collect and trade NFTs")
+                .pauseFor(1000)
+                .deleteAll()
+                .typeString("to collaborate with advertisers in the Metaverse")
+                .pauseFor(1000)
+                .start();
+                }}
+            />
+             {/* is a new kind of social network where influencers share their lifestyle with live stream shopping and engage with the audience, collect and trade NFTs and collaborate with advertisers in the Metaverse */}
             </h4>
             <a href=""><Button className="btn-info">Read Our Whitepaper</Button></a>
             {/* <h3 className="text-color-primary-gradient"><a href="">Read Our Whitepaper</a></h3> */}
