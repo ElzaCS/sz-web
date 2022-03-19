@@ -4,6 +4,8 @@ import { SectionSplitProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
 import Button from '../elements/Button';
+import Rotation from 'react-rotation'
+import TextTransition, { presets } from "react-text-transition";
 
 const propTypes = {
   ...SectionSplitProps.types
@@ -110,6 +112,22 @@ const FeaturesSplit = ({
 
   // consoleText(['Hello World.', 'Console Text', 'Made with Love.'], 'text', ['tomato','rebeccapurple','lightblue']);
 
+  const TEXTS_BRANDS = [
+    "Livestream your products or take your store live from anywhere in the world to increase sales",
+    "Have hundreds of attendees shop your products live while interacting with you.",
+    "Create paid events or spin up your own channel that your audience will happily buy to get exclusive access to you."
+  ];
+
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(() =>
+      setIndex(index => index + 1),
+      3000 // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+
 
   return (
     <section
@@ -124,27 +142,113 @@ const FeaturesSplit = ({
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8"> For Brands  </div>
                   <h3 className="mt-0 mb-12"> Livestream to Increase E-Commerce Sales </h3>
+                  <br /><br /><br />
                   {/* <div class='console-container'>
                       <div class='console-underscore' id='console'>&#95;</div>
                   </div> */}
-                  <p className="m-0" style={{paddingLeft: '3%', paddingTop: '3%'}}>
-                    <img
-                        src={require('./../../assets/images/stream-icon.png')}
-                        alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
-                  &nbsp; Livestream your products or <span className="text-color-primary-gradient">take your store </span> live from anywhere in the world to increase sales. 
-                  </p>
-                  <p className="m-0" style={{paddingLeft: '3%', paddingTop: '3%'}}>
-                  <img
-                        src={require('./../../assets/images/queue-icon.png')}
-                        alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
-                  &nbsp; Have hundreds of attendees shop your products live while <span className="text-color-primary-gradient"> interacting </span> with you. <br />
-                  </p>
-                  <p className="m-0" style={{paddingLeft: '3%', paddingTop: '3%'}}>
-                  <img
-                        src={require('./../../assets/images/event-icon.png')}
-                        alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
-                  &nbsp; Create paid events or spin up your own channel that your audience will happily buy to get <span className="text-color-primary-gradient">exclusive access </span> to you.
-                  </p>
+                {/* <TextTransition
+                  className="features-transition"
+                  text={ TEXTS_BRANDS[index % TEXTS_BRANDS.length] }
+                  springConfig={ presets.wobbly }
+                /> */}
+                {/* ------ */}
+                <div class="content-slider">
+                  <div class="slider">
+                    <div class="mask">
+                      <ul>
+                        <li class="anim1">
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/stream-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            <span class="text-color-primary-gradient">Livestream </span> your products to grow your audience</div>
+                            <br />
+                            <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/stream-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            <span class="text-color-primary-gradient">Take your store </span> live from anywhere in the world to increase sales
+                          </div>
+                        </li>
+
+                        <li class="anim2">
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/stream-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            <span class="text-color-primary-gradient">Take your store </span> live from anywhere in the world to increase sales
+                          </div>
+                          <br />
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/queue-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Have hundreds of attendees shop your products live while <span class="text-color-primary-gradient"> interacting </span> with you.
+                          </div>
+                        </li>
+
+                        <li class="anim3">
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/queue-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Have hundreds of attendees shop your products live while <span class="text-color-primary-gradient"> interacting </span> with you.
+                          </div>
+                          <br />
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/queue-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Create <span class="text-color-primary-gradient">paid events </span> for your dedicated audience
+                          </div>
+
+                        </li>
+                        <li class="anim4">
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/queue-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Create <span class="text-color-primary-gradient">paid events </span> for your dedicated audience
+                          </div>
+                          <br />
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/event-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Spin up your own channel for your audience to get <span class="text-color-primary-gradient">exclusive access </span> to you.
+                          </div>
+                        </li>
+                        <li class="anim5">
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/event-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Spin up your own channel for your audience to get <span class="text-color-primary-gradient">exclusive access </span> to you.
+                          </div>
+                          <br />
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/stream-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            <span class="text-color-primary-gradient">Livestream </span> your products to grow your audience
+                          </div>
+                            
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>                
+                
               </div>
 
               <div className={ classNames('split-item-image center-content-mobile reveal-from-bottom', imageFill && 'split-item-image-fill' )} data-reveal-container=".split-item">
@@ -166,37 +270,108 @@ const FeaturesSplit = ({
               <div className="split-item-content center-content-mobile reveal-from-right" data-reveal-container=".split-item">
                 
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8"> For Influencers  </div>
-                <h3 className="mt-0 mb-12"> Engage your audience in Real-Time  </h3>
-                <p className="m-0" style={{paddingLeft: '3%', paddingTop: '3%'}}>
-                <img
-                      src={require('./../../assets/images/popular-icon.png')}
-                      alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
-                 &nbsp;
-                Get your audience on stage for a <span className="text-color-primary-gradient">real-time interaction</span> to increase sales. <br />
-                </p>
-                <p className="m-0" style={{paddingLeft: '3%', paddingTop: '3%'}}>
-                <img
-                      src={require('./../../assets/images/experience-icon.png')}
-                      alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
-                 &nbsp;
-                Give your followers a 1:1 and 1:many <span className="text-color-primary-gradient">live experiences </span><span className="text-color-primary-gradient">they will never forget </span> and build your community. <br />
-                </p>
-                <p className="m-0" style={{paddingLeft: '3%', paddingTop: '3%'}}>
-                <img
-                      src={require('./../../assets/images/live-icon.png')}
-                      alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
-                 &nbsp;
-                Let your followers share your live performance with their social networks to create a <span className="text-color-primary-gradient">viral effect</span> in real-time. <br />
-                </p>
-                <p className="m-0" style={{paddingLeft: '3%', paddingTop: '3%'}}>
-                <img
-                      src={require('./../../assets/images/trust-icon.png')}
-                      alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
-                 &nbsp;
-                With Livestream Commerce, now an industry first for luxury brands, creators can form <span className="text-color-primary-gradient">deeper connections </span> and answer questions in real-time through live video.
-                </p>
+                <h3 className="mt-0 mb-12" > Engage your audience in Real-Time  </h3>
+                <br /><br /><br /><br /><br /><br /><br /><br />
+                <div class="content-slider-right">
+                  <div class="slider">
+                    <div class="mask">
+                      <ul>
+                        <li class="anim1">
+                          <div class="quote">
+                          <img
+                                src={require('./../../assets/images/popular-icon.png')}
+                                alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                          &nbsp;
+                          Get your audience on stage for a <span className="text-color-primary-gradient">real-time interaction</span> to increase sales.
+                          </div>
+                          <br />
+                          <div class="quote">
+                          <img
+                            src={require('./../../assets/images/experience-icon.png')}
+                            alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                      &nbsp;
+                      Give your followers a 1:1 and 1:many <span className="text-color-primary-gradient">live experiences </span><span className="text-color-primary-gradient">they will never forget </span> and build your community.
+                          </div>
+                        </li>
+
+                        <li class="anim2">
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/experience-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Give your followers a 1:1 and 1:many <span className="text-color-primary-gradient">live experiences </span><span className="text-color-primary-gradient">they will never forget </span> and build your community.
+                          </div>
+                          <br />
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/live-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Let your followers share your live performance with their social networks to create a <span className="text-color-primary-gradient">viral effect</span> in real-time.
+                          </div>
+                        </li>
+
+                        <li class="anim3">
+                          <div class="quote">
+                             <img
+                              src={require('./../../assets/images/live-icon.png')}
+                              alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            Let your followers share your live performance with their social networks to create a <span className="text-color-primary-gradient">viral effect</span> in real-time.
+                          </div>
+                          <br />
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/trust-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            With Livestream Commerce, now an industry first for luxury brands, creators can form <span className="text-color-primary-gradient">deeper connections </span> and answer questions in real-time through live video.
+                          </div>
+
+                        </li>
+                        <li class="anim4">
+                          <div class="quote">
+                            <img
+                              src={require('./../../assets/images/trust-icon.png')}
+                              alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            With Livestream Commerce, now an industry first for luxury brands, creators can form <span className="text-color-primary-gradient">deeper connections </span> and answer questions in real-time through live video.
+                          </div>
+                          <br />
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/event-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            <span className="text-color-primary-gradient">Monetize your content </span>in multiple ways, while also putting power back into the hands of their audience.
+                          </div>
+                        </li>
+                        <li class="anim5">
+                          <div class="quote">
+                            <img
+                                  src={require('./../../assets/images/event-icon.png')}
+                                  alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                            &nbsp;
+                            <span className="text-color-primary-gradient">Monetize your content </span>in multiple ways, while also putting power back into the hands of their audience.
+                          </div>
+                          <br />
+                          <div class="quote">
+                          <img
+                                src={require('./../../assets/images/popular-icon.png')}
+                                alt="Features tile icon 01" style={{ display: 'inline', width: '25px' }} />
+                          &nbsp;
+                          Get your audience on stage for a <span className="text-color-primary-gradient">real-time interaction</span> to increase sales.
+                          </div>
+                            
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
               </div>
-              
+              <br /><br />
             </div>
             </a>
           </div>

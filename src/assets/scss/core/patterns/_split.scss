@@ -1,3 +1,105 @@
+/* -- feature split --*/
+
+.content-slider {
+	width: 100%;
+	position: absolute;
+	top: 150px;
+  }
+  .content-slider-right {
+	width: 100%;
+	position: absolute;
+	top: 120px;
+  }
+  .mask {
+	overflow: hidden;
+  /*   height: 220px; */
+  }
+  
+  .slider li {
+	position: absolute;
+  /*   top: 225px; */
+	list-style: none;
+  }
+  
+  .slider li.anim1 {
+	animation: cycle 15s linear infinite;
+  }
+  
+  .slider li.anim2 {
+	animation: cycle2 15s linear infinite;
+  }
+  
+  .slider li.anim3 {
+	animation: cycle3 15s linear infinite;
+  }
+  
+  .slider li.anim4 {
+	animation: cycle4 15s linear infinite;
+  }
+  
+  .slider li.anim5 {
+	animation: cycle5 15s linear infinite;
+  }
+  
+  .slider:hover li {
+	animation-play-state: paused;
+  }
+  
+  @keyframes cycle {
+	0% {	  top: 0px;	}
+	4% {	  top: 0px;	}
+	16% {	  top: 0px;	  opacity: 1;	  z-index: 0;	}
+	20% {	  top: -100px;	  opacity: 0;	  z-index: 0;	}
+	21% {	  top: 100px;	  opacity: 0;	  z-index: -1;	}
+	50% {	  top: 100px;	  opacity: 0;	  z-index: -1;	}
+	92% {	  top: 100px;	  opacity: 0;	  z-index: 0;	}
+	96% {	  top: 100px;	  opacity: 0;	}
+	100% {	  top: 0px;	  opacity: 1;	}
+  }
+  
+  @keyframes cycle2 {
+	0% {	  top: 100px;	  opacity: 0;	}
+	16% {	  top: 100px;	  opacity: 0;	}
+	20% {	  top: 0px;	  opacity: 1;	}
+	24% {	  top: 0px;	  opacity: 1;	}
+	36% {	  top: 0px;	  opacity: 1;	  z-index: 0;	}
+	40% {	  top: -100px;	  opacity: 0;	  z-index: 0;	}
+	41% {	  top: 100px;	  opacity: 0;	  z-index: -1;	}
+	100% {	  top: 100px;	  opacity: 0;	  z-index: -1;	}
+  }
+  
+  @keyframes cycle3 {
+	0% {	  top: 100px;	  opacity: 0;	}
+	36% {	  top: 100px;	  opacity: 0;	}
+	40% {	  top: 0px;	  opacity: 1;	}
+	44% {	  top: 0px;	  opacity: 1;	}
+	56% {	  top: 0px;	  opacity: 1;	  z-index: 0;	}
+	60% {	  top: -100px;	  opacity: 0;	  z-index: 0;	}
+	61% {	  top: 100px;	  opacity: 0;	  z-index: -1;	}
+	100% {	  top: 100px;	  opacity: 0;	  z-index: -1;	}
+  }
+  
+  @keyframes cycle4 {
+	0% {	  top: 100px;	  opacity: 0;	}
+	56% {	  top: 100px;	  opacity: 0;	}
+	60% {	  top: 0px;	  opacity: 1;	}
+	64% {	  top: 0px;	  opacity: 1;	}
+	76% {	  top: 0px;	  opacity: 1;	  z-index: 0;	}
+	80% {	  top: -100px;	  opacity: 0;	  z-index: 0;	}
+	81% {	  top: 100px;	  opacity: 0;	  z-index: -1;	}
+	100% {	  top: 100px;	  opacity: 0;	  z-index: -1;	}
+  }
+  
+  @keyframes cycle5 {
+	0% {	  top: 100px;	  opacity: 0;	}
+	76% {	  top: 100px;	  opacity: 0;	}
+	80% {	  top: 0px;	  opacity: 1;	}
+	84% {	  top: 0px;	  opacity: 1;	}
+	96% {	  top: 0px;	  opacity: 1;	  z-index: 0;	}
+	100% {	  top: -100px;	  opacity: 0;	  z-index: 0;	}
+  }
+/*   ------*/
+
 @keyframes split-slide-left {
 	0%   {left: 0px;}
 	50% {left: -50px}
@@ -20,6 +122,12 @@
         margin-bottom: $split-item--padding-v__mobile / 2;
     }
 
+	.split-left {
+		min-height: 650px;
+	}
+	.quote {
+		text-align: left;
+	}
 	// .split-left {
 	// 	animation-name: split-slide-left;
 	// 	position: relative;
@@ -69,6 +177,17 @@
 
 @include media( '<=medium' ) {
 
+	.content-slider {
+		top: 400px;
+		// padding-top: 100px;
+		margin-top: 20px;
+		// padding-bottom: 5%;
+		margin-bottom: 20px;
+	  }
+	  .content-slider-right {
+		  top: 1125px;
+	  }
+
 	.split-wrap {
 
 		.split-item {
@@ -114,6 +233,7 @@
 			  animation-duration: 5s;
 			animation-iteration-count: infinite;
 			// animation-play-state: paused;
+			top: -50px;
 		}
 		
 		.split-right {
@@ -122,6 +242,7 @@
 			  animation-duration: 5s;
 			animation-iteration-count: infinite;
 			// animation-play-state: paused;
+			top: -50px;
 		}
 
 		.split-item {
@@ -196,6 +317,8 @@
 		}
 	}
 }
+
+
 
 @import url(https://fonts.googleapis.com/css?family=Khula:700);
 body {

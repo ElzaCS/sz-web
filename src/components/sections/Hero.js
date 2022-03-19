@@ -6,6 +6,8 @@ import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
 import Typewriter from "typewriter-effect";
+import TextTransition, { presets } from "react-text-transition";
+// import RotationBox from "react-3d-rotation-box";
 
 const propTypes = {
   ...SectionProps.types
@@ -53,6 +55,23 @@ const Hero = ({
     bottomDivider && 'has-bottom-divider'
   );
 
+  const TEXTS = [
+    "to introduce their stores live",
+    "to engage with the audience",
+    "to collect and trade NFTs",
+    "to collaborate with advertisers in the Metaverse"
+  ];
+
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(() =>
+      setIndex(index => index + 1),
+      3000 // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+
   return (
     <section
       {...props}
@@ -62,7 +81,12 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h4 className="hero-h mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200" style={{display: "block"}}>
-            <span className="text-color-primary-gradient">StreamZ</span> empowers influencers
+            <span className="text-color-primary-gradient">StreamZ</span> empowers influencers <br />
+            {/* <TextTransition
+              text={ TEXTS[index % TEXTS.length] }
+              springConfig={ presets.wobbly }
+              inline={true}
+            /> */}
             <Typewriter  
                 loop="true"
                 options={{
@@ -98,12 +122,14 @@ const Hero = ({
               aria-controls="video-modal"
               onClick={openModal}
             >
-              <Image
-                className="has-shadow"
-                src={require('./../../assets/images/video-placeholder.jpg')}
-                alt="Hero"
-                width={896}
-                height={504} />
+              {/* <RotationBox> */}
+                <Image
+                  className="has-shadow"
+                  src={require('./../../assets/images/video-placeholder.jpg')}
+                  alt="Hero"
+                  width={896}
+                  height={504} />
+              {/* </RotationBox> */}
             </a>
           </div>
           <Modal

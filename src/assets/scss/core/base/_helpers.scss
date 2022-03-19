@@ -209,7 +209,7 @@
 	padding: 20% 0;
 	// margin: auto;
 	margin-left: 45%;
-	font-family: Space Mono;
+	font-family: "Space Mono";
 	font-variant: small-caps;
 	animation: glow 0.5s ease-in-out infinite alternate;
 	// font-size:6vw
@@ -251,6 +251,11 @@
 		height:400px;
 		border-radius:200px;
 	}
+}
+
+.features-transition{
+	// max-width: 200px;
+	position: relative;
 }
   
 .inner {
