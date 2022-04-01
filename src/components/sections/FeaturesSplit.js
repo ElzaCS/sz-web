@@ -229,7 +229,7 @@ const FeaturesSplit = ({
               {/* <br /><br /> */}
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8"> For Creators  </div>
                 <h3 className="mt-0 mb-12" > Engage your audience in Real-Time  </h3>
-                <br /><br /><br /><br /><br />
+                {/* <br /><br /><br /><br /><br /> */}
                 <div class="content-slider-right">
                   <div class="slider">
                     <div class="mask">

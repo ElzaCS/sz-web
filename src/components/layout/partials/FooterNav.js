@@ -17,7 +17,7 @@ const FooterNav = ({
       {...props}
       className={classes}
     >
-
+      <div style={{overflowX: 'auto'}}>
       <table>
         <tbody>
           <tr>
@@ -44,6 +44,7 @@ const FooterNav = ({
           
         </tbody>
       </table>
+      </div>
     </nav>
   );
 }

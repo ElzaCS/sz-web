@@ -188,22 +188,34 @@
 @include media( '<=medium' ) {
 
 	.content-slider {
-		top: 400px;
+		top: 500px;
 		// padding-top: 100px;
 		margin-top: 20px;
 		// padding-bottom: 5%;
 		margin-bottom: 20px;
 	  }
 	  .content-slider-right {
-		  top: 1125px;
+		  margin-top: 0;
+		  top: 1275px;
 	  }
 
 	.split-wrap {
 
-		.split-item {
+		.split-left {
 
 			.split-item-content {
 				margin-bottom: $split-item--inner-padding-v_mobile;
+				min-height: fit-content;
+				margin-top: 10%;
+				padding-bottom: 30%;
+			}
+		}
+		.split-right {
+
+			.split-item-content {
+				margin-bottom: $split-item--inner-padding-v_mobile;
+				min-height: fit-content;
+				padding-bottom: 100%;
 			}
 		}
 

@@ -226,7 +226,7 @@
 	// position: absolute;
 	text-align: center;
 	width: 100%;
-	font-size: 3.5em;
+	font-size: 5vw;
 	line-height: 1.0;
 	// height: fit-content;
 	position: absolute;
@@ -243,7 +243,7 @@
 .home-subheading {
 	text-align: center;
 	width: 100%;
-	font-size: 1.5em;
+	font-size: 2vw;
 	line-height: 1.0;
 	// height: fit-content;
 	position: absolute;
@@ -257,8 +257,13 @@
 @include media( '<=medium' ) {
 	.home-heading{
 		width: 100%;
+		font-size: 12vw;
 		text-align: center;
-		padding: 25% 1%;
+		padding: 40% 1%;
+	}
+	.home-subheading {
+		padding: 115% 0;
+		font-size: 6vw;
 	}
 }
 
