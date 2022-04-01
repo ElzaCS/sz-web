@@ -17,6 +17,32 @@ const defaultProps = {
   ...SectionProps.defaults
 }
 
+let i = 1;
+function flipCard () {
+  let cardTransitionTime = 500;
+  var card = document.getElementById("js-card");
+  let switching = false
+  
+  if (switching) {
+     return false
+  }
+  switching = true
+  // if (i)
+    card.classList.toggle("is-switched");
+  // else
+  //   card.classList.remove("is-switched");
+  // i = 1 - i;
+
+  
+  window.setTimeout(function () {
+    //  card.children.classList.toggle('is-active')
+    // card.classList.remove("is-switched")
+     switching = false
+  }, cardTransitionTime / 2)
+}
+
+window.setTimeout(flipCard, 3000);
+
 const Hero = ({
   className,
   topOuterDivider,
@@ -76,44 +102,40 @@ const Hero = ({
     <section
       {...props}
       className={outerClasses}
+      style={{backgroundImage: "linear-gradient(to bottom right, #000000, #25143D, #000000)"}}
     >
       <div className="container-sm">
         <div className={innerClasses}>
           <div className="hero-content">
             <h4 className="hero-h mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200" style={{display: "block"}}>
-            <span className="text-color-primary-gradient">StreamZ</span> empowers influencers <br />
-            {/* <TextTransition
-              text={ TEXTS[index % TEXTS.length] }
-              springConfig={ presets.wobbly }
-              inline={true}
-            /> */}
-            <Typewriter  
-                loop="true"
-                options={{
-                  loop: true
-                }}
+            {/* <span className="text-color-primary-gradient">StreamZ</span> empowers influencers <br /> */}
+            </h4>
+
+            <div class="card js-card" id="js-card">
+              <div class="card__wrapper">
+                <div class="card__side is-active">
+                  <span className="text-color-primary-gradient">StreamZ</span> is a new kind of social network where influencers share their lifestyle with live stream shopping and engage with the audience, collect and trade NFTs and collaborate with advertisers in the Metaverse.
+                </div>
+                <div class="card__side card__side--back">
+                  We are on a mission to change how <span className="text-color-primary-gradient">Brands</span> and <span className="text-color-primary-gradient">Creators</span> monetize their passion and products blending the convenience of online shopping and storytelling with the engaging <span className="text-color-primary-gradient">LiveStreams</span>.
+                </div>
+              </div>
+            </div>
+
+
+            {/* <Typewriter  
+                loop="true"                options={{ loop: true }}
                 onInit={(typewriter)=> {
                 typewriter
-                .changeDelay(60)
-                .changeDeleteSpeed(1)
-                .typeString("to introduce their stores live")
-                .pauseFor(1000)
-                .deleteAll()
-                .typeString("to engage with the audience")
-                .pauseFor(1000)
-                .deleteAll()
-                .typeString("to collect and trade NFTs")
-                .pauseFor(1000)
-                .deleteAll()
-                .typeString("to collaborate with advertisers in the Metaverse")
-                .pauseFor(1000)
+                .changeDelay(60)                .changeDeleteSpeed(1)
+                .typeString("to introduce their stores live")                .pauseFor(1000)                .deleteAll()
+                .typeString("to engage with the audience")                .pauseFor(1000)                .deleteAll()
+                .typeString("to collect and trade NFTs")                .pauseFor(1000)                .deleteAll()
+                .typeString("to collaborate with advertisers in the Metaverse")                .pauseFor(1000)
                 .start();
                 }}
-            />
-             {/* is a new kind of social network where influencers share their lifestyle with live stream shopping and engage with the audience, collect and trade NFTs and collaborate with advertisers in the Metaverse */}
-            </h4>
+            /> */}
             <a href=""><Button className="btn-info">Read Our Whitepaper</Button></a>
-            {/* <h3 className="text-color-primary-gradient"><a href="">Read Our Whitepaper</a></h3> */}
           </div>
           <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="800">
             <a
@@ -125,7 +147,8 @@ const Hero = ({
               {/* <RotationBox> */}
                 <Image
                   className="has-shadow"
-                  src={require('./../../assets/images/video-placeholder.jpg')}
+                  src={require('./../../assets/images/brands1.jpg')}
+                  // src="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fa419fbf4-9fb3-4a61-a015-1a454cf64096_livestream_jpg.jpg%3Fbucket%3Ddocument&w=1200&q=75"
                   alt="Hero"
                   width={896}
                   height={504} />
@@ -139,6 +162,7 @@ const Hero = ({
             video="https://player.vimeo.com/video/174002812"
             videoTag="iframe" />
         </div>
+        
       </div>
     </section>
   );

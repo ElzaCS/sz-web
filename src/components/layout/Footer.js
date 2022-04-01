@@ -33,6 +33,7 @@ const Footer = ({
       {...props}
       className={classes}
     >
+      <a id="connect">
       <div className="container">
         <div className={
           classNames(
@@ -41,8 +42,11 @@ const Footer = ({
           )}>
           <div className="footer-top space-between text-xxs">
             <Logo />
+           
             {/* <div className="footer-copyright">StreamZ</div> */}
-            <FooterSocial />
+            {/* <FooterSocial /> */}
+            
+            {/* <FooterNav /> */}
           </div>
           <div className="footer-bottom space-between text-xxs invert-order-desktop">
             <FooterNav />
@@ -50,6 +54,7 @@ const Footer = ({
           </div>
         </div>
       </div>
+      </a>
     </footer>
   );
 }

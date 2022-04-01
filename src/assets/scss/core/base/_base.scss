@@ -9,7 +9,9 @@ html {
 }
 
 body {
-	background: color-bg(body); /* Fallback for when there is no custom background color defined. */
+	background-color: black;
+	// background: color-bg(body); /* Fallback for when there is no custom background color defined. */
+	// background-image: linear-gradient(to bottom right, #1A1038, #E47A9C);
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }

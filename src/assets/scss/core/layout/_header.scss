@@ -27,9 +27,13 @@
 		visibility: hidden;
 	}
 }
+.brand-name {
+	font-family: none;
+}
 
 .site-header-inner {
     display: flex;
+	width: 100%;
     justify-content: space-between;
     align-items: center;
 	height: $header-height__mobile;

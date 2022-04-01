@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
+import 'react-sticky-header/styles.css';
+import StickyHeader from 'react-sticky-header';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -66,7 +68,15 @@ const Header = ({
     if (!nav.current) return
     if (!isActive || nav.current.contains(e.target) || e.target === hamburger.current) return;
     closeMenu();
-  }  
+  }
+
+  const changeBg = () => {
+    if (window.scrollY >= 60) {
+      // setNavbarLogo(logoBlue)
+    } else {
+      // setNavbarLogo(logo)
+    }
+  }
 
   const classes = classNames(
     'site-header',
@@ -76,45 +86,58 @@ const Header = ({
   );
 
   return (
-    <header      {...props}      className={classes}    >
-      {/* <div className="container sticky"> */}
-      <div className="container">
-        <div className={ classNames( 'site-header-inner', bottomDivider && 'has-bottom-divider' )}>
-          <Logo />
-          <h2 className="brand-name">StreamZ</h2>
-          {!hideNav &&
-            <>
-              <button ref={hamburger}  className="header-nav-toggle"  onClick={isActive ? closeMenu : openMenu}   >
-                <span className="screen-reader">Menu</span>
-                <span className="hamburger">
-                  <span className="hamburger-inner"></span>
-                </span>
-              </button>
-              <nav ref={nav} className={ classNames( 'header-nav',  isActive && 'is-active'  )}>
-                <div className="header-nav-inner">
-                  <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
-                    <li> <a href="#for-brands" onClick={closeMenu}>Brands</a> </li>
-                  </ul>
-                  <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
-                    <li> <a href="#for-influencers" onClick={closeMenu}>Creators</a> </li>
-                  </ul>
-                  <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
-                    <li> <a href="https://twitter.com/IncStreamz" onClick={closeMenu}>Twitter</a> </li>
-                  </ul>
-                  <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
-                    <li> <Link to="#0" onClick={closeMenu}>Instagram</Link> </li>
-                  </ul>
-                  {!hideSignin &&
-                    <ul className="list-reset header-nav-right" >
-                      <li><Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Schedule a Meet</Link> </li>
-                    </ul>}
-                </div>
-              </nav>
-            </>
-          }
+    <StickyHeader
+      className="stickyheader"
+    // This is the sticky part of the header.
+    header={
+      // <header      {...props}      className={classes}    >
+        <div className="sticky">
+        {/* <div className="container" style={{position: 'sticky', top: 0}}> */}
+
+          <div className={ classNames( 'site-header-inner', bottomDivider && 'has-bottom-divider' )}>
+          {/* &ensp;&ensp; &ensp;&ensp; &ensp;&ensp; */}
+          <Logo /> &ensp;&ensp;
+            <h2 className="brand-name">StreamZ</h2>
+            {!hideNav &&
+              <>
+                <button ref={hamburger}  className="header-nav-toggle"  onClick={isActive ? closeMenu : openMenu}   >
+                  <span className="screen-reader">Menu</span>
+                  <span className="hamburger">
+                    <span className="hamburger-inner"></span>
+                  </span>
+                </button>
+                <nav ref={nav} className={ classNames( 'header-nav',  isActive && 'is-active'  )}>
+                  <div className="header-nav-inner">
+                    <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                      <li> <a href="#for-brands" onClick={closeMenu}>Brands</a> </li>
+                    </ul>
+                    <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                      <li> <a href="#for-creators" onClick={closeMenu}>Creators</a> </li>
+                    </ul>
+                    <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                      <li> <a href="#connect" onClick={closeMenu}>Connect With Us</a> </li>
+                    </ul>
+                    {/* <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                      <li> <a href="https://twitter.com/IncStreamz" onClick={closeMenu}>Twitter</a> </li>
+                    </ul>
+                    <ul className={classNames('list-reset text-xs', navPosition && `header-nav-${navPosition}`)}>
+                      <li> <Link to="#0" onClick={closeMenu}>Instagram</Link> </li>
+                    </ul> */}
+                    {!hideSignin &&
+                      <ul className="list-reset header-nav-right" >
+                        <li><Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Schedule a Meet</Link> </li>
+                      </ul>}
+                      &ensp;&ensp;&ensp;&ensp;
+                  </div>
+                  
+                </nav>
+              </>
+            }
+          </div>
         </div>
-      </div>
-    </header>
+      // {/* </header> */}
+    }
+    ></StickyHeader>
   );
 }
 

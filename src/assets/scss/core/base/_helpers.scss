@@ -1,3 +1,11 @@
+.stickyheader {
+	width: 100%;
+	// margin: auto;
+	padding-left: 50%;
+	right: 500px;
+	// justify-content: center;
+	// background-color: black;
+}
 // Hide elements, for screen readers only
 .screen-reader {
 	position: absolute;
@@ -11,8 +19,21 @@
 }
 
 .sticky{
-	position: fixed;
-    top: 0;
+	width: 100%;
+	// align-content: center;
+	// margin-top: 0;
+	top: 0;
+	// position: absolute;
+	// right: 0;
+	// left: 0;
+	// margin-left: auto;
+	// margin-right: auto;
+	background-color: rgba(0,0,0,0.75);
+	// opacity: 0.75;
+	padding-left: 10%;
+	padding-right: 10%;
+	margin: auto;
+
 }
 
 // Reset lists style
@@ -161,6 +182,7 @@
 // Helper class for coloured bg
 .has-bg-color {
 	position: relative;
+	// background-image: linear-gradient(to bottom right, #1A1038, #E47A9C);
 	background-color: color-bg(bg-color);
 	z-index: 0;
 }
@@ -189,6 +211,10 @@
 		margin-top: 10%;
 		// margin-bottom: auto;
 	}
+	.sticky{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
 }
 
 @keyframes glow {
@@ -206,13 +232,27 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	padding: 20% 0;
+	padding: 17% 0;
 	// margin: auto;
 	margin-left: 45%;
-	font-family: "Space Mono";
+	font-family: none;
 	font-variant: small-caps;
 	animation: glow 0.5s ease-in-out infinite alternate;
 	// font-size:6vw
+}
+.home-subheading {
+	text-align: center;
+	width: 100%;
+	font-size: 1.5em;
+	line-height: 1.0;
+	// height: fit-content;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 30% 0;
+	// margin: auto;
+	margin-left: 45%;
+	font-family: monospace;
 }
 @include media( '<=medium' ) {
 	.home-heading{
