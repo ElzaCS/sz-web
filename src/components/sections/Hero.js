@@ -107,10 +107,9 @@ const Hero = ({
       <div className="container-sm">
         <div className={innerClasses}>
           <div className="hero-content">
-            <h4 className="hero-h mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200" style={{display: "block"}}>
-            {/* <span className="text-color-primary-gradient">StreamZ</span> empowers influencers <br /> */}
-            <span className="text-color-primary-gradient">StreamZ</span> is a new kind of social network where influencers share their lifestyle with live stream shopping and engage with the audience, collect and trade NFTs and collaborate with advertisers in the Metaverse.
-            </h4>
+          <h4 className="hero-h mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200" style={{display: "block"}}>
+            We are on a mission to change how <span className="text-color-primary-gradient">Brands</span> and <span className="text-color-primary-gradient">Creators</span> monetize their passion and products blending the convenience of online shopping and storytelling with the engaging <span className="text-color-primary-gradient">LiveStreams</span>.
+        </h4>
 
             {/* <div class="card js-card" id="js-card">
               <div class="card__wrapper">
@@ -148,7 +147,8 @@ const Hero = ({
               {/* <RotationBox> */}
                 <Image
                   className="has-shadow"
-                  src={require('./../../assets/images/brands1.jpg')}
+                  // src={require('./../../assets/images/brands1.jpg')}
+                  src="https://www.maestro.io/img/product/header.webp"
                   // src="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fa419fbf4-9fb3-4a61-a015-1a454cf64096_livestream_jpg.jpg%3Fbucket%3Ddocument&w=1200&q=75"
                   alt="Hero"
                   width={896}
@@ -163,10 +163,23 @@ const Hero = ({
             video="https://player.vimeo.com/video/174002812"
             videoTag="iframe" />
         </div>
+        
         <h4 className="hero-h mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200" style={{display: "block"}}>
-            We are on a mission to change how <span className="text-color-primary-gradient">Brands</span> and <span className="text-color-primary-gradient">Creators</span> monetize their passion and products blending the convenience of online shopping and storytelling with the engaging <span className="text-color-primary-gradient">LiveStreams</span>.
-        </h4>
-        <br /><br />
+            <span className="text-color-primary-gradient">StreamZ</span> is a new kind of social network where influencers share their lifestyle with live stream shopping and engage with the audience, collect and trade NFTs and collaborate with advertisers in the Metaverse.
+            </h4>
+        <br />
+        <h4 className="hero-h mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200" style={{display: "block"}}>
+            <span className="text-color-primary-gradient"> Influencers Will Be Rewarded For Great Content, And So Will  Be The Audience </span>
+            </h4>
+            <center>
+              <Image
+                  className="has-shadow"
+                  src={require('./../../assets/images/product.jpg')}
+                  alt="Hero"
+                  width={896}
+                  height={504} />
+            </center>
+
         {/* <Image
               className="has-shadow"
               src={require('./../../assets/images/creators1.jpg')}
@@ -174,7 +187,7 @@ const Hero = ({
               alt="Hero"
               width={896}
               height={504} /> */}
-        
+        <br /><br />
       </div>
     </section>
   );
